@@ -102,8 +102,15 @@ int main() {
                 break;
             }
             else if (pilula == 2){
-                printf ("Você escolheu a Pílula Vermelha.. Esteja preparado para as consequências..\n");
-                printf ("*Link Secreto*\n");
+                printf("___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|\n");
+                printf("_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__\n");
+                printf("___|___|___|___|__Você escolheu a Pílula Vermelha..|___|___|___|___|___|\n");
+                printf("_|___|___|___|_Esteja preparado para as consequências..__|___|___|___|__\n");
+                printf("___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|\n");
+                printf("_|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|__\n");
+                printf("___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|\n");
+                printf("_|___|___|___|___|___|___|__*Link Secreto*___|___|___|___|___|___|___|__\n");
+                printf("___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|___|\n");
                 printf ("https://www.youtube.com/watch?v=YJg02ivYzSs&list=PL1xbey6TAgb3W84UvLkgdAAc8UZN-LbGt&index=21\n");
                 break;  
             }

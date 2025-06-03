@@ -7,26 +7,112 @@ int main() {
     printf("* Bem vindo ao nosso jogo de adivinhação *\n");
     printf("******************************************\n");
     srand(time(0));
+    
     int numerosecreto = rand() % 100;
     int acertou = 0;
+    int matrix = 0;
+    int pilula = 0;
     int chute;
     int tentativas = 1;
+    int nivel;
     double pontos = 1000;
-    while(1) {
+    
+    printf("Escolha o nível que quer jogar\n");
+    printf("(1)Fácil\n(2)Médio\n(3)Difícil\n");
+    printf("Escolha: ");
+    scanf("%d", &nivel);
+    
+    int numerodetentativas;
+    if (nivel == 1){
+        printf("Você tem 20 tentativas\n");
+        printf("Boa sorte!!\n");
+        numerodetentativas = 20;
+    }
+    else if (nivel == 2){
+        printf("Você tem 10 tentativas\n");
+        printf("Boa sorte!!\n");
+        numerodetentativas = 10;
+    }
+    else if (nivel == 3){
+        printf("Você tem 5 tentativas\n");
+        printf("Boa sorte!!\n");
+        numerodetentativas = 5;
+    }
+    else if (nivel == 420){
+        printf("Você está tentando sair da matrix??\n");
+        numerodetentativas = 0;
+    }
+    else if (nivel == 69){
+        printf("Você está tentando sair da matrix??\n");
+        numerodetentativas = 0;
+    }
+    else if (nivel == 42069){
+        printf("Você está tentando sair da matrix??\n");
+        printf("Esse código era pra ser secreto..\n");
+        numerodetentativas = 0;
+    }
+    else {
+        printf("tem que escolher um número de 1 a 3 imbecil..\n");
+        numerodetentativas = 0;
+    }
+    
+    
+    for(int i=1;1<=numerodetentativas;i++) {
         printf("Tentativa %d\n", tentativas);
         printf("Qual é o seu chute? ");
         scanf("%d", &chute);
         printf("Seu chute foi %d\n", chute);
-        if(chute < 0) {
+        if(chute == 69){
+            printf("Você está tentando sair da matrix??\n");
+            printf("PARE COM ISSO IMEDIATAMENTE!!!\n");
+            continue;
+        }
+        else if (chute == 420){
+            printf("Você está tentando sair da matrix??\n");
+            printf("PARE COM ISSO IMEDIATAMENTE!!!\n");
+            continue;
+        }
+        else if (chute == 69420){
+            printf("Você está quase saindo da matrix!!\n");
+            printf("Esse é seu objetivo??\n");
+            printf("PARE COM ISSO IMEDIATAMENTE!!!\n");
+            continue;
+        }
+        else if (chute == 24){
+            printf("ihh.. LÁ ELE!!!\n");
+            continue;
+        }
+        else if(chute < 0) {
             printf("Você não pode chutar números negativos!\n");
             continue;
         }
         int acertou = (chute == numerosecreto);
+        int matrix = (chute == 42069);
         int maior = chute > numerosecreto;
-        if(acertou) {
-            printf("Parabéns! Você acertou!\n");
-            printf("Você acertou em %d tentativas!", tentativas);
-            printf("Total de pontos: %.2f\n", pontos); 
+        
+        
+        if (matrix) {
+            printf("Você descobriu o código secreto para fugir da matrix..\n");
+            printf("Agora você precisa escolher: \n");
+            printf("(1) Pílula Azul\n(2) Pílula Vermelha\n");
+            scanf("%d", &pilula);
+            
+            if (pilula == 1){
+                printf ("Você escolheu a Pílula Azul.. Volte para sua realidade sem preocupações!\n");
+                break;
+            }
+            else if (pilula == 2){
+                printf ("Você escolheu a Pílula Vermelha.. Esteja preparado para as consequências..\n");
+                printf ("*Link Secreto*\n");
+                printf ("https://www.youtube.com/watch?v=YJg02ivYzSs&list=PL1xbey6TAgb3W84UvLkgdAAc8UZN-LbGt&index=21\n");
+                break;  
+            }
+            else{
+                break;
+            }
+        }
+        
+        else if(acertou) {
             break;
         }
         else if(maior) {
@@ -39,11 +125,14 @@ int main() {
         double pontosperdidos = abs(chute - numerosecreto) / 2.0;
         pontos = (pontos - pontosperdidos);
         }
-    printf("Fim de jogo!\n");
-    printf("Você acertou em %d tentativas!", tentativas);
-    printf("Total de pontos: %.2f\n", pontos); 
-    }
-
-
-
-
+        printf("Fim de jogo!\n");
+        
+        if (acertou) {
+          printf("Acertou Miserávi!\n");
+          printf("Você acertou em %d tentativas!", tentativas);
+          printf("Total de pontos: %.2f\n", pontos); 
+        }
+        else {
+          printf("Vish paizão..\n");
+        }
+        }

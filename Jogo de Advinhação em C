@@ -7,9 +7,9 @@ int main() {
     printf("* Bem vindo ao nosso jogo de adivinhação *\n");
     printf("******************************************\n");
 
-    srand(time(0));  // Semente aleatória
+    srand(time(0));  
 
-    int numerosecreto = rand() % 100;  // Gera número entre 0 e 99
+    int numerosecreto = rand() % 100;
     int acertou = 0;
     int matrix = 0;
     int pilula = 0;
@@ -82,8 +82,6 @@ int main() {
             return;
         }
         
-
-        // Mensagens especiais
         if (chute == 69 || chute == 420 || chute == 69420) {
             printf("Você está tentando sair da matrix??\n");
             printf("PARE COM ISSO IMEDIATAMENTE!!!\n");
@@ -121,7 +119,6 @@ int main() {
             continue;
         }
 
-        // Códigos especiais
         matrix = (chute == 42069);
         if (matrix) {
             printf("Você descobriu o código secreto para fugir da matrix..\n");
@@ -141,20 +138,18 @@ int main() {
             break;
         }
 
-        // Verificação de acerto
+        
         if (chute == numerosecreto) {
             acertou = 1;
             break;
         }
 
-        // Dicas de maior/menor
         if (chute > numerosecreto) {
             printf("Seu chute foi maior que o número secreto\n");
         } else {
             printf("Seu chute foi menor que o número secreto\n");
         }
 
-        // Pontuação
         double pontosperdidos = abs(chute - numerosecreto) / 2.0;
         pontos -= pontosperdidos;
         tentativas++;
